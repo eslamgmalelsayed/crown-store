@@ -1,7 +1,7 @@
 // imports
 
 // app start
-function Cart() {
+const Cart = () => {
   return (
     <div className="cart">
        cart

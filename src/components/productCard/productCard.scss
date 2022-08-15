@@ -1,0 +1,11 @@
+.card{
+    // margin: .5rem auto;
+    img{
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 300px;
+        max-height: 300px;
+        object-position: center;
+        object-fit: cover;
+    }
+}

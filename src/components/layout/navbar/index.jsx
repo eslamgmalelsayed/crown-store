@@ -2,9 +2,13 @@
 import { Outlet, Link } from "react-router-dom";
 import './navbar.styles.scss'
 import {ReactComponent as Logo } from '../../../assets/images/logo.svg'
-import {ReactComponent as Cart } from '../../../assets/images/cart.svg'
+import { UserContext } from "../../contexts/user";
+import { signOutMethod } from "../../../utils/firebase/firebase.utils";
+import { useContext } from "react";
+import CartComp from "../../cartComp/CartComp";
 // nav start
 const NavBar = () => {
+  const {currentUser} = useContext(UserContext)
     return (
       <>
         <nav className="navbar navbar-expand-lg pb-4">
@@ -22,10 +26,15 @@ const NavBar = () => {
                 <li className="nav-item">
                   <Link className="nav-link active fs-5 fw-bold" aria-current="page" to='/contact'>contact</Link>
                 </li><li className="nav-item">
-                  <Link className="nav-link active fs-5 fw-bold" aria-current="page" to='/signin'>sign in</Link>
+                  { currentUser ? (
+                     <Link onClick={signOutMethod} className="nav-link active fs-5 fw-bold" aria-current="page" to='/signin'>log out</Link>
+                    ) : (
+                      <Link className="nav-link active fs-5 fw-bold" aria-current="page" to='/signin'>sign in</Link>
+                    )
+                  }
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link fs-5" to='/cart'><Cart /></Link>
+                  <div className="nav-link fs-5"><CartComp /></div>
                 </li>
               </ul>
             </div>

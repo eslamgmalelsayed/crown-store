@@ -31,13 +31,12 @@ const SignInComp = () => {
         }
         catch (error){
             alert('error occured',error)
-            console.log(error)
         }
     }
         // pop up
         const logGoogleUser = async () => {
-        const {user} = await signInWithGooglePopup()
-        await createUserDocumentFromAuth(user)
+         await signInWithGooglePopup()
+         navigate('/')
         }
     return (
         <>

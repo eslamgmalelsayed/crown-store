@@ -1,0 +1,22 @@
+.cart-wrapper{
+    position: relative;
+    .cart-items-wrapper{
+        position: absolute;
+        z-index: 999;
+        background: #fff;
+        width: 300px;
+        height: fit-content;
+        padding: .5rem;
+        border: 2px solid #000;
+        top: 3rem;
+        right: 3%;
+        transition: .5s all;
+        img{
+            width: 40px;
+            height: 60px;
+        }
+        p{
+            font-size: .8rem;
+        }
+    }
+}
