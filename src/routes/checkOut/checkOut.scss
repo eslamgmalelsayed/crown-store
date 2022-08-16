@@ -1,0 +1,21 @@
+img{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    max-height: 150px;
+    object-position: center;
+    object-fit: contain;
+}
+.bi{
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    @media ( max-width:991px ) {
+        font-size: .8rem;
+    }
+}
+.responsive-font{
+    @media ( max-width:991px ) {
+        font-size: .8rem;
+    }
+}

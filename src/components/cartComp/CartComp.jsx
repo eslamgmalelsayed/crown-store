@@ -39,7 +39,7 @@ const CartComp = () => {
                     <CartBody key={item.id} item={item} />
                 ))
                 }
-            <Link to='/cart' className='btn btn-dark btn-lg text-white mb-2'>Go To Checkout</Link>
+            <Link to='/checkout' className='btn btn-dark btn-lg text-white mb-2'>Go To Checkout</Link>
             </div>
             }
         </div>

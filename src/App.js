@@ -5,8 +5,7 @@ import Home from "./routes/home";
 import Shop from "./routes/shop";
 import Contact from "./routes/contact";
 import SignIn from "./routes/signIn";
-import Cart from "./routes/cart";
-
+import CheckOut from "./routes/checkOut";
 // app start
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
             <Route path="/shop" element={<Shop/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/signin" element={<SignIn/>} />
-            <Route path="/cart" element={<Cart/>} />
+            <Route path="/checkout" element={<CheckOut/>} />
           </Route>
         </Routes>
       </div>
