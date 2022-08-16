@@ -6,17 +6,47 @@
         background: #fff;
         width: 300px;
         height: fit-content;
+        max-height: 350px;
         padding: .5rem;
         border: 2px solid #000;
         top: 3rem;
         right: 3%;
         transition: .5s all;
+        overflow-y: scroll;
+        @media (max-width: 991px) {
+            top: 2.5rem;
+             left: 3%;
+        }
         img{
-            width: 40px;
-            height: 60px;
+            min-width: 30%;
+            max-width: 30%;
+            min-height: 100px;
+            max-height: 100px;
+            object-position: center;
+            object-fit: contain;
         }
         p{
             font-size: .8rem;
+        }
+    }
+    .cart-icon{
+        position: relative;
+    }
+    span{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        padding: .3rem;
+        font-weight: bolder;
+        font-size: 1rem;
+        color: red;
+        @media (min-width: 991px ) {
+            bottom: 17%;
+            right: -65%;
+        }
+        @media (max-width: 991px ) {
+            bottom: 17%;
+            left: .3%;
         }
     }
 }

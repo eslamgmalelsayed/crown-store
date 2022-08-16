@@ -1,4 +1,15 @@
 nav{
+    @media (max-width: 991px) {
+        .navbar-collapse{
+            width: 100%;
+            background: #fff;
+            position: absolute;
+            top: 100%;
+            z-index: 999;
+            padding: 1rem;
+            transition: 0s;
+        }
+    }
     a{
         color: #000 !important;
     }
