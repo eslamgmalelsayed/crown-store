@@ -1,19 +1,15 @@
 // imports
-import { useContext } from 'react';
-import {ProductsContext} from '../../components/contexts/products'
-import ProductCard from '../../components/productCard';
+import { Routes, Route } from 'react-router-dom'
+import CatShow from '../catShow';
+import Cat from '../../components/cat/cat';
 // app start
 const Shop = () => {
-  const { productsList } = useContext(ProductsContext)
   return (
-    <div className="shop py-5">
-      <div className='row g-3'>
-        {productsList.map( (product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </div>
-    </div>
-  );
+    <Routes >
+      <Route index element={<CatShow />} />
+      <Route path=':cat' element={<Cat />} />
+    </Routes>
+  )
 }
 
 export default Shop;

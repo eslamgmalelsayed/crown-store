@@ -35,9 +35,13 @@ const CartComp = () => {
             className="cart-items-wrapper text-center"
             >
                 {/* cart body */}
-                { cartItems.map(item => (
+                { cartItems &&
+                    cartItems.map(item => (
                     <CartBody key={item.id} item={item} />
                 ))
+                }
+                { cartItems.length == 0 &&
+                    <h5 className='my-4'>no items to display yet :(</h5> 
                 }
             <Link to='/checkout' className='btn btn-dark btn-lg text-white mb-2'>Go To Checkout</Link>
             </div>

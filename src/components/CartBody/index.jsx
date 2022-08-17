@@ -8,7 +8,7 @@ const CartBody = ({item}) => {
             <img src={imageUrl} alt={name} />
             <div className='ms-3'>
             <p className='fw-bold'>{name}</p>
-            <p className='fw-bold'>{`${quantity} x ${price}`}</p>
+            <p className='fw-bold'>{`${quantity} x ${price}`} </p>
             </div>
         </div>
         </>

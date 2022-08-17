@@ -35,7 +35,7 @@ const CheckOut = () => {
             }
             <h2 className='total my-3'>{`total : ${total} $`}</h2>
             { cartItems.length == 0 &&
-             <h1 className='py-5 my-5 bg-warning text-white'>no items to display yet</h1>          
+             <h1 className='py-5 my-5 bg-warning text-white'>no items to display yet :(</h1>          
             }         
     </div>
   );

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore,doc, setDoc, getDoc } from "firebase/firestore";
+import { getFirestore,doc, setDoc, getDoc, collection, collectionKey, writeBatch, query,getDocs } from "firebase/firestore";
 
 import {getAuth,
      signInWithPopup,
@@ -36,6 +36,29 @@ googleProvider.setCustomParameters({
 });
 
 const auth = getAuth();
+// add to db
+export const addCollection = async (collectionKey, objs) => {
+    const collectionRef = collection(db, collectionKey)
+    const batch = writeBatch(db)
+    objs.forEach(obj => {
+        const docRef = doc(collectionRef, obj.title.toLowerCase())
+        batch.set(docRef, obj)
+    })
+    await batch.commit()
+    console.log('done')
+}
+// get data
+export const getCats = async () => {
+    const collectionRef = collection(db, 'cats')
+    const q = query(collectionRef)
+    const querySnapShot = await getDocs(q)
+    const catMap = querySnapShot.docs.reduce(( acc, docSapshot) => {
+    const {title, items } = docSapshot.data()
+    acc[title.toLowerCase()] = items
+    return acc
+    }, {})
+    return catMap
+}
 //sign in pop up
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 // assign to db

@@ -3,10 +3,10 @@ import './productCard.scss'
 import { useContext, } from 'react'
 import { CartContext } from '../contexts/Cart'
 // start comp
-const ProductCard = ({product}) => {
-    const {name,price,imageUrl} = product
+const ProductCard = ({cat}) => {
+    const {name,price,imageUrl} = cat
     const {AddToCart} = useContext(CartContext)
-    const addProductToCart = () => AddToCart(product)
+    const addProductToCart = () => AddToCart(cat)
     return (
         <>
             <div className="col-lg-3 col-md-4">
